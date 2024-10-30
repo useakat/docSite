@@ -1,12 +1,13 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const posts = await getCollection('docs');
+const allPosts = await getCollection('docs');
+const posts = allPosts.filter(post => post.data.category === "レセプト関係");
 const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<BaseLayout title="Company Documentation" description="社内ドキュメントサイト">
+<BaseLayout title="レセプト関係書類一覧" description="レセプト関係の文書一覧">
   <div class="flex min-h-screen">
     <aside class="w-64 bg-gray-100 p-6">
       <h2 class="text-lg font-semibold mb-4 text-gray-700">カテゴリー</h2>
@@ -22,7 +23,7 @@ const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDa
           </a>
         </li>
         <li>
-          <a href="/docs/receipt" class="block text-gray-600 hover:text-blue-600 hover:bg-gray-200 p-2 rounded">
+          <a href="/docs/receipt" class="block text-blue-600 bg-white hover:bg-gray-200 p-2 rounded">
             レセプト関係
           </a>
         </li>
@@ -30,9 +31,9 @@ const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDa
     </aside>
 
     <div class="flex-1 p-8">
-      <h1 class="text-3xl font-bold mb-8">ドキュメント一覧です</h1>
+      <h1 class="text-3xl font-bold mb-8">レセプト関係書類一覧</h1>
       <div class="grid gap-8">
-        {sortedPosts.map((post) => (
+        {sortedPosts.map(post => (
           <article class="bg-white p-6 rounded-lg shadow-sm">
             <h2 class="text-xl font-semibold mb-2">
               <a href={`/docs/${post.slug}`} class="text-blue-600 hover:text-blue-800">
@@ -42,8 +43,6 @@ const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDa
             <p class="text-gray-600 mb-2">{post.data.description}</p>
             <div class="flex items-center text-sm text-gray-500">
               <span>{new Date(post.data.pubDate).toLocaleDateString('ja-JP')}</span>
-              <span class="mx-2">•</span>
-              <span>{post.data.category}</span>
             </div>
           </article>
         ))}

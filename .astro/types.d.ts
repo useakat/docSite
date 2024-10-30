@@ -199,6 +199,69 @@ declare module 'astro:content' {
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".md"] };
+"manual-1.md": {
+	id: "manual-1.md";
+  slug: "manual-1";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".md"] };
+"manual-2.md": {
+	id: "manual-2.md";
+  slug: "manual-2";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".md"] };
+"manual-3.md": {
+	id: "manual-3.md";
+  slug: "manual-3";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".md"] };
+"receipt-1.md": {
+	id: "receipt-1.md";
+  slug: "receipt-1";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".md"] };
+"receipt-2.md": {
+	id: "receipt-2.md";
+  slug: "receipt-2";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".md"] };
+"receipt-3.md": {
+	id: "receipt-3.md";
+  slug: "receipt-3";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".md"] };
+"rules-1.md": {
+	id: "rules-1.md";
+  slug: "rules-1";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".md"] };
+"rules-2.md": {
+	id: "rules-2.md";
+  slug: "rules-2";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".md"] };
+"rules-3.md": {
+	id: "rules-3.md";
+  slug: "rules-3";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".md"] };
 };
 
 	};
